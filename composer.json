@@ -1,0 +1,27 @@
+{
+	"name" : "a-proud/twiew-bundle",
+	"type" : "symfony-bundle",
+	"keywords": ["templating"],
+	"description" : "Provide simple and powerfull templates based on twig",
+	"license" : "MIT",
+	"authors" : [
+		{
+			"name" : "Sergiy Krikovtsov",
+			"email" : "krikovtsov.sergey@gmail.com"
+		},
+		 {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+	],
+	"require" : {
+		"php" : ">=7.4",
+		"symfony/twig-bundle" : "5.4.*"
+    },
+	"autoload" : {
+		"psr-4" : {
+			"AProud\\TwiewBundle\\" : "src/"
+		}
+	},
+	"minimum-stability": "dev"
+}
