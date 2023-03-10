@@ -1,0 +1,18 @@
+{% if twiew.sections.header %}
+	{% for blockKey, blockInclude in twiew.sections.header|sort %}
+		{% include blockInclude %}
+	{% endfor %}
+{% endif %}
+{% if twiew.sections.main %}
+	{% for blockKey, blockInclude in twiew.sections.main|sort %}
+		{% set block = blockInclude %}
+		{% if blockInclude.layout %}
+			{% include blockInclude.layout %}
+		{% endif %}
+	{% endfor %}
+{% endif %}
+{% if twiew.sections.footer %}
+	{% for blockKey, blockInclude in twiew.sections.footer|sort %}
+		{% include blockInclude %}
+	{% endfor %}
+{% endif %}

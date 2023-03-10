@@ -1,0 +1,6 @@
+services:
+    AProud\TwiewBundle\Twiew:
+        arguments:
+            - '@twig'
+            - '@request_stack'
+            - '@parameter_bag'

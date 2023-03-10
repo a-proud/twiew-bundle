@@ -1,0 +1,12 @@
+{{block.custom_html_top|default('')}}
+
+<div class="d-flex justify-content-center align-items-center {{block.class|default('')}}">
+	{% for includeComponent in block.components %}
+		{% set component = includeComponent %}
+		{% if includeComponent.block == '1' %}
+			{% include includeComponent.tpl %}
+		{% endif %}
+	{% endfor %}
+</div>
+
+{{block.custom_html_bottom|default('')}}

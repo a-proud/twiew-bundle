@@ -1,0 +1,10 @@
+{{block.custom_html_top|default('')}}
+
+{% for includeComponent in block.components%}
+	{% set component = includeComponent %}
+	{% if includeComponent.block == '1' %}
+		{% include includeComponent.tpl %}
+	{% endif %}
+{% endfor %}
+
+{{block.custom_html_bottom|default('')}}
