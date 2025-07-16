@@ -191,6 +191,7 @@ class MainController extends AbstractController
 
 }
 
+Store tpl schema in YAML
 ------------------------
 	# config/app_main.yaml
 
