@@ -192,57 +192,27 @@ class MainController extends AbstractController
 }
 
 ------------------------
-# config/app_main.yaml
+	# config/app_main.yaml
 
-default.css.main_style: './assets/css/style.min.css'
-default.css.bootstrap_icons: './node_modules/bootstrap-icons/font/bootstrap-icons.css'
-default.htmllang: 'en'
-default.title: 'Twiew example'
-default.favicon_href: './assets/favicon.png'
-default.cssframework: 'bootstrap52'
+	default.htmllang: 'en'
+	default.title: 'URL shortener'
+	default.favicon_href: './assets/favicon.png'
+	default.cssframework: 'bootstrap5'
+	default.sections:
+		head:
+			layout: 'main/components/head.html.twig'
 
-app_main_index.js_top.jquery: {'weight': 5, 'src': './node_modules/jquery/dist/jquery.min.js'}
-app_main_index.js_top.jquery.serializejson: {'weight': 10, 'src': './node_modules/jquery-serializejson/jquery.serializejson.min.js'}
-app_main_index.js_top.bootstrap.bundle: {'weight': 10, 'src': './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'}
-app_main_index.js_top.tinymce: {'weight': 15, 'src': './assets/js/tinymce/tinymce.min.js'}
-app_main_index.js_top.tinymce_fullscreen_plugin: {'weight': 15, 'src': './assets/js/tinymce/plugins/fullscreen/plugin.min.js'}
-app_main_index.js_top.tinymce_image_plugin: {'weight': 15, 'src': './assets/js/tinymce/plugins/image/plugin.min.js'}
-app_main_index.js_top.tinymce_code_plugin: {'weight': 15, 'src': './assets/js/tinymce/plugins/code/plugin.min.js'}
-app_main_index.js_top.tinymce_link_plugin: {'weight': 15, 'src': './assets/js/tinymce/plugins/link/plugin.min.js'}
-app_main_index.js_top.tinymce_save_plugin: {'weight': 15, 'src': './assets/js/tinymce/plugins/save/plugin.min.js'}
-app_main_index.js_top.tinymce_jquery: {'weight': 15, 'src': './assets/js/tinymce-jquery.min.js'}
-app_main_index.js_bottom.custom_js: {'src': './assets/js/custom.js', 'weight': 15}
 
-# Остальные схемы можно оставить вложенными, если они не касаются default:
-app_main_index.sections:
-    main:
-        -
-            layout: '@twiew/layouts/row_columns.html.twig'
-            components: 
-                loginform:
-                    slot: '1'
-                    tpl: '@twiew/components/loginform.html.tw.twig'
-
-app_main_login.sections:
-    main:
-        -
-            layout: '@twiew/layouts/row_columns.html.twig'
-            custom_html_top: ''
-            custom_html_bottom: ''
-            class: 'vh-100'
-            components:
-                -
-                    slot: '1'
-                    tpl: 'main/components/loginform.html.twig'
-
-app_main_settings.sections:
-    main:
-        -
-            layout: '@twiew/layouts/one_column_center.html.twig'
-            components:
-                -
-                    slot: '1'
-                    tpl: 'main/components/settings.html.twig'
+	app_main_index.sections:
+		main:
+			-
+				layout: '@twiew/layouts/one_column_center.html.twig'
+				custom_html_top: ''
+				custom_html_bottom: ''
+				components:
+					loginform:
+						slot: '1'
+						tpl: 'main/components/test.html.twig'
 
 
 
