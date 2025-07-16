@@ -193,8 +193,6 @@ class MainController extends AbstractController
 
 Store tpl schema in YAML
 ------------------------
-	# config/app_main.yaml
-
 	default.htmllang: 'en'
 	default.title: 'URL shortener'
 	default.favicon_href: './assets/favicon.png'
