@@ -3,57 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{{twiew.head|default('')}}
     <title>{{twiew.title}}</title>
-	<link rel="icon" type="image/png" sizes="16x16 32x32 64x64" href="{{twiew.fawicon_href}}">
-	{% if twiew.css %}
-		{% for css in twiew.css %}
-			<link rel="stylesheet" href="{{css}}">
-		{% endfor %}
+	<link rel="icon" type="image/png" sizes="16x16 32x32 64x64" href="{{twiew.favicon_href}}">
+
+	{% if attribute(twiew.sections, 'head') is defined %}
+		{% include twiew.sections.head.layout with _context %}
 	{% endif %}
-    
-	{% if twiew.js_top %}
-		{% for js in twiew.js_top|sort((a, b) => a.weight <=> b.weight)|column('src') %}
-			<script src="{{js}}"></script>
-		{% endfor %}
-	{% endif %}
+	
 </head>
 <body>
-{% if twiew.sections.header %}
+
+{% if attribute(twiew.sections, 'header') is defined %}
 	<header>
 		{% for blockKey, blockInclude in twiew.sections.header|sort %}
 			{% set block = blockInclude %}
 			{% if blockInclude.layout %}
-				{% include blockInclude.layout %}
+				{% include blockInclude.layout with _context %}
 			{% endif %}
 		{% endfor %}
 	</header>
 {% endif %}
-{% if twiew.sections.main %}
+{% if attribute(twiew.sections, 'main') is defined %}
 	<main>
 		{% for blockKey, blockInclude in twiew.sections.main|sort %}
 			{% set block = blockInclude %}
 			{% if blockInclude.layout %}
-				{% include blockInclude.layout %}
+				{% include blockInclude.layout with _context %}
 			{% endif %}
 		{% endfor %}
 	</main>
 {% endif %}
-{% if twiew.sections.footer %}
+{% if attribute(twiew.sections, 'footer') is defined %}
 	<footer>
 		{% for blockKey, blockInclude in twiew.sections.footer|sort %}
 			{% set block = blockInclude %}
 			{% if blockInclude.layout %}
-				{% include blockInclude.layout %}
+				{% include blockInclude.layout with _context %}
 			{% endif %}
 		{% endfor %}
 	</footer>
 {% endif %}
 
-{% if twiew.js_bottom %}
-	{% for js in twiew.js_bottom|sort((a, b) => a.weight <=> b.weight)|column('src') %}
-		<script src="{{js}}"></script>
-	{% endfor %}
-{% endif %}
 </body>
 </html>

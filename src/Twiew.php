@@ -53,9 +53,6 @@ class Twiew implements TwiewInterface
 					'empty' => '@twiew/layouts/__layout_empty.html.twig',
 				],
 				'head' => [],
-				'css' => [],
-				'js_top' => [],
-				'js_bottom' => [],
 				'sections' => [
 					'header' => [],
 					'main' => [],
