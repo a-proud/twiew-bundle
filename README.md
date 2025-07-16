@@ -196,25 +196,25 @@ class MainController extends AbstractController
 Store tpl schema in YAML
 ------------------------
 ```yaml
-	default.htmllang: 'en'
-	default.title: 'URL shortener'
-	default.favicon_href: './assets/favicon.png'
-	default.cssframework: 'bootstrap5'
-	default.sections:
-		head:
-			layout: 'main/components/head.html.twig'
+default.htmllang: 'en'
+default.title: 'URL shortener'
+default.favicon_href: './assets/favicon.png'
+default.cssframework: 'bootstrap5'
+default.sections:
+	head:
+		layout: 'main/components/head.html.twig'
 
 
-	app_main_index.sections:
-		main:
-			-
-				layout: '@twiew/layouts/one_column_center.html.twig'
-				custom_html_top: ''
-				custom_html_bottom: ''
-				components:
-					loginform:
-						slot: '1'
-						tpl: 'main/components/test.html.twig'
+app_main_index.sections:
+	main:
+		-
+			layout: '@twiew/layouts/one_column_center.html.twig'
+			custom_html_top: ''
+			custom_html_bottom: ''
+			components:
+				loginform:
+					slot: '1'
+					tpl: 'main/components/test.html.twig'
 
 ```
 
