@@ -156,6 +156,7 @@ So let's move this schema in some another place and leave the controller to do i
 
 Store tpl schema in YAML
 ------------------------
+```php
 <?php
 //src/Controller/MainController.php
 
@@ -190,9 +191,11 @@ class MainController extends AbstractController
     }
 
 }
+```
 
 Store tpl schema in YAML
 ------------------------
+```yaml
 	default.htmllang: 'en'
 	default.title: 'URL shortener'
 	default.favicon_href: './assets/favicon.png'
@@ -213,7 +216,7 @@ Store tpl schema in YAML
 						slot: '1'
 						tpl: 'main/components/test.html.twig'
 
-
+```
 
 License
 -------
